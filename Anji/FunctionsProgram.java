@@ -8,7 +8,7 @@
     int[][] studentmarks = new int[studentcount][subjectcount];
     int[] studentattendance = new int [studentcount];
     int ecount = 0;
-    
+
     InitializeAttandance(studentattendance, studentcount, new int[]{90, 73, 100, 115, 72, 40, 65, 80, 75, 60});
     InitializeStudentMarks(studentmarks, 0, subjectcount, new int[]{99, 76, 75, 70, 78});
     InitializeStudentMarks(studentmarks, 1, subjectcount, new int[]{90, 35, 35, 70, 60});
@@ -28,7 +28,7 @@
       String grade= Getgrade(mper);
       float aper=Getpercentage(studentattendance[i], maxattendance);
       boolean iseligible=iseligible(grade,aper);
-      //PrintEligibilityAndCriteria(iseligible, grade, aper);
+      PrintEligibilityAndCriteria(iseligible, grade, aper);
       if(iseligible)
         ecount++;
     }
@@ -89,7 +89,7 @@
   
   static boolean iseligibleAndLog(String grade,float per)
   {
-      boolean isEligible = (grade == "A" && per >= 60)|| (grade != "D" && per >= 70);
+      boolean isEligible = (grade == "A" && per >= 60) || (grade != "D" && per >= 70);
       PrintEligibilityAndCriteria(isEligible, grade, per);
       /*if(isEligible)
         eligibilityString = "Yes";
@@ -105,13 +105,18 @@
       }*/
       return isEligible;
   }
-  
   static void PrintEligibilityAndCriteria(boolean isEligible, String grade, float percentage)
   {
     String eligibilityString = isEligible ? "Yes" : "No";
-    System.out.println("Eligible: " + eligibilityString + " Grade: " + 
-                          grade + " Attendence percentage: " + percentage);
-      
+   /* System.out.println( " %s "+ eligibilityString   + "Grade: " + 
+                          grade + " Attendence percentage: " + percentage);*/
+   /* name="eligible";
+    name="Grade: ";
+    name="Attendance percentage: ";
+    stueligible=new eligible(iseligible, Grade, aper );*/
+    String PrintableString = String.format("eligible: %1$s grade: %2$s percentage: %3$s", eligibilityString, grade, percentage);
+  
+    System.out.println( PrintableString );
   }
 }
 
