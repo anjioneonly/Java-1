@@ -49,12 +49,12 @@
     }
   }
   
-  static int Getsumofmarks (int studentindex,int[][] studentmarks,int studentcount)
+  static int Getsumofmarks (int studentindex,int[][] studentmarks,int subCount)
   {
-    int sumofmarks=0;
-    for(int i=0;i<studentcount;i++)
+    int sumofmarks = 0;
+    for(int i = 0; i < subCount; i++)
     {
-      sumofmarks+=studentmarks[studentindex][i];
+      sumofmarks += studentmarks[studentindex][i];
     }
     return sumofmarks;
   }
